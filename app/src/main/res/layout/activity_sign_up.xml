@@ -2,17 +2,18 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/mainS"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gray"
-    tools:context=".registration.LoginActivity">
+    tools:context=".registration.SignUpActivity">
+
 
     <TextView
         android:id="@+id/txtLogIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/log_in"
+        android:text="@string/sign_up"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,21 +24,44 @@
         android:paddingStart="20dp"
         />
 
+
     <EditText
-        android:id="@+id/edtEmailLogin"
-        android:layout_width="320dp"
+        android:id="@+id/edtFirstName"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:hint="@string/email"
-        android:inputType="textEmailAddress"
+        android:hint="@string/first_name"
+        android:inputType="textPersonName"
         android:imeOptions="actionNext"
         android:maxLength="20"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtLogIn"
-        android:drawableStart="@drawable/ic_email"
-        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/edtLastName"
         android:textColorHint="@color/white"
-        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/bg_login"
+        android:padding="14dp"
+        android:layout_marginStart="30dp"
+        android:paddingStart="26dp"
+        android:textAlignment="textStart"/>
+
+
+    <EditText
+        android:id="@+id/edtLastName"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/lastname"
+        android:textColorHint="@color/white"
+        android:layout_marginEnd="30dp"
+        android:inputType="textPersonName"
+        android:imeOptions="actionNext"
+        android:maxLength="20"
+        app:layout_constraintTop_toBottomOf="@+id/txtLogIn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/edtFirstName"
+        android:textColor="@color/white"
+        android:textSize="16sp"
         android:layout_marginTop="80dp"
         android:background="@drawable/bg_login"
         android:padding="14dp"
@@ -46,7 +70,29 @@
         android:textAlignment="textStart"/>
 
     <EditText
-        android:id="@+id/edtPassLogin"
+        android:id="@+id/edtEmailSignUp"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/email"
+        android:textColorHint="@color/white"
+        android:inputType="textEmailAddress"
+        android:imeOptions="actionNext"
+        android:maxLength="20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtFirstName"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/bg_login"
+        android:padding="16dp"
+        android:drawablePadding="6dp"
+        android:paddingStart="20dp"
+        android:textAlignment="textStart"/>
+
+
+    <EditText
+        android:id="@+id/edtPassSignUp"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:hint="@string/password"
@@ -56,55 +102,38 @@
         android:maxLength="8"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtEmailLogin"
-        android:drawableStart="@drawable/ic_password"
+        app:layout_constraintTop_toBottomOf="@+id/edtEmailSignUp"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:layout_marginTop="30dp"
         android:background="@drawable/bg_login"
-        android:padding="10dp"
-        android:drawablePadding="6dp"
+        android:padding="16dp"
         android:paddingStart="20dp"
         android:textAlignment="textStart"/>
 
-
-    <TextView
-        android:id="@+id/txtForgotPass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/forgot_password"
-        android:textSize="18dp"
-        android:textColor="@color/red"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtPassLogin"
-        android:layout_marginEnd="60dp"
-        android:layout_marginTop="20dp"
-        />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnLogin"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_btn_rounded"
-        app:layout_constraintTop_toBottomOf="@+id/txtForgotPass"
+        app:layout_constraintTop_toBottomOf="@+id/edtPassSignUp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="50dp"
-        android:text="@string/log_in"
+        android:text="@string/sign_up"
         android:textColor="@color/white"
         android:textAllCaps="false"
         android:textSize="18sp"/>
 
-
-
     <TextView
-        android:id="@+id/txtDontAccount"
+        android:id="@+id/txtAlreadyAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/don_t_have_an_account"
+        android:text="@string/already_have_an_account"
         android:textColor="@color/white"
         android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/txtSignUpSmall"
+        app:layout_constraintEnd_toStartOf="@+id/txtLogInSmall"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginStart="60dp"
@@ -112,25 +141,17 @@
 
 
     <TextView
-        android:id="@+id/txtSignUpSmall"
+        android:id="@+id/txtLogInSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/sign_up"
+        android:text="@string/log_in"
         android:textColor="@color/red"
         android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/txtDontAccount"
+        app:layout_constraintStart_toEndOf="@+id/txtAlreadyAccount"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginEnd="70dp"
         android:layout_marginBottom="40dp"/>
-
-
-
-
-
-
-
-
 
 
 
