@@ -11,15 +11,15 @@
 
     <ImageView
         android:id="@+id/imgSplash"
-        android:layout_width="110dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/baseline_edit_square_24"
+        android:src="@drawable/ic_quiz"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="50dp"
-        app:layout_constraintEnd_toStartOf="@+id/txtIcon"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
+<!--
     <TextView
         android:id="@+id/txtIcon"
         android:layout_width="wrap_content"
@@ -33,5 +33,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginEnd="50dp"/>
+-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
